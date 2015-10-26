@@ -66,11 +66,11 @@
 	var data = [{ id: 'a', text: 'Hello World!' }, { id: 'b', text: 'Sweet component!' }, { id: 'c', text: 'Foo bar' }, { id: 'd', text: 'Longer text' }];
 	
 	var root = document.getElementById('root');
-	var idx = 0;
 	
+	var idx = -1;
 	function render() {
-	  var item = data[idx++ % data.length];
-	  _reactDom2['default'].render(_react2['default'].createElement(_Ticker2['default'], { item: item }), root);
+	  idx = ++idx % data.length;
+	  _reactDom2['default'].render(_react2['default'].createElement(_Ticker2['default'], { item: data[idx] }), root);
 	}
 	
 	render();

@@ -10,11 +10,11 @@ const data = [
 ];
 
 const root = document.getElementById('root');
-let idx = 0;
 
+let idx = -1;
 function render() {
-  const item = data[(idx++) % data.length];
-  ReactDOM.render(<Ticker item={item} />, root);
+  idx = (++idx) % data.length;
+  ReactDOM.render(<Ticker item={data[idx]} />, root);
 }
 
 render();
